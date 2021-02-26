@@ -1,0 +1,277 @@
+# Teste
+set $mod Mod4
+set $alt Mod1
+
+## Fonts + Themes {{
+    font pango:Terminus 12px
+
+    set_from_resource $base03   i3wm.color8     #002b36
+    set_from_resource $base02   i3wm.color0     #073642
+    set_from_resource $base01   i3wm.color10    #586e75
+    set_from_resource $base00   i3wm.color11    #657b83
+    set_from_resource $base0    i3wm.color12    #839496
+    set_from_resource $base1    i3wm.color14    #93a1a1
+    set_from_resource $base2    i3wm.color7     #eee8d5
+    set_from_resource $base3    i3wm.color15    #fdf6e3
+
+    set_from_resource $yellow   i3wm.color3     #b58900
+    set_from_resource $orange   i3wm.color9     #cb4b16
+    set_from_resource $red      i3wm.color1     #dc322f
+    set_from_resource $magenta  i3wm.color5     #d33682
+    set_from_resource $violet   i3wm.color13    #6c71c4
+    set_from_resource $blue     i3wm.color4     #268bd2
+    set_from_resource $cyan     i3wm.color6     #2aa198
+    set_from_resource $green    i3wm.color2     #859900
+
+    set_from_resource $background i3wm.background $base3
+    set_from_resource $foreground i3wm.foreground $base00
+
+    set_from_resource $lighterbg  i3wm.lighterbg  $base02
+    set_from_resource $separator  i3wm.separator  $lighterbg
+
+
+    # Theme colors
+    #class                      border         backgr     text     indicator
+    #303743
+    #class                      border         backgr     text     indicator
+    client.focused              #2C313D        #2e3440    #DBDBDB  $background
+    client.focused_inactive     #282923        #282923    #DBDBDB  $background
+    client.unfocused            #282923        #282923    #787878  $background
+    client.urgent               $background    #282d37    #FF0000  $background
+    client.placeholder          $background    #282D37    #DBDBDB  $background
+    #client.background       #161616
+
+## }}
+
+## Configurações gerais {{
+    # Use Mouse+$mod to drag floating windows to their wanted position
+    # focus_follows_mouse no
+    floating_modifier $mod
+    # Mudar caps para escape
+    # reload the configuration file
+    bindsym $mod+Shift+c reload
+    # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+    bindsym $mod+Shift+r restart
+    # Configure border style <normal|1pixel|pixel xx|none|pixel>
+    # font pango:lemon 0
+
+    # Barra de titulo
+    for_window [class="^.*"] border pixel 0, title_format "<b> %class > %title </b>"
+    new_window pixel 0
+    new_float normal
+
+    #Esconder bordas na janela unica
+    hide_edge_borders true
+    # kill focused window
+    bindsym $alt+F4 kill
+    bindsym $mod+Shift+q kill
+    # Desliga/Reiniciar/Sair
+    set $mode_system Bloquear (l), Sair (e), Reiniciar (r), Desligar (s), Suspender (h)
+    mode "$mode_system" {
+        bindsym l exec i3lock-fancy
+        bindsym e exec i3-msg exit
+        bindsym h exec i3lock-fancy && systemctl suspend
+        bindsym r exec systemctl reboot
+        bindsym s exec systemctl poweroff
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+    }
+    bindsym Pause mode "$mode_system"
+    bindsym $mod+b exec i3lock-fancy
+
+    ## }}
+
+## Janelas {{
+    # change focus
+    bindsym $mod+h focus left
+    bindsym $mod+j focus down
+    bindsym $mod+k focus up
+    bindsym $mod+l focus right
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+    bindsym $mod+$alt+h move left
+    bindsym $mod+$alt+j move down
+    bindsym $mod+$alt+k move up
+    bindsym $mod+$alt+l move right
+    # split in horizontal orientation
+    bindsym $mod+Shift+o split h; exec notify-send 'Janela horizontally'
+    # split in vertical orientation
+    bindsym $mod+Shift+e split v; exec notify-send 'Janela vertically'
+    # enter fullscreen mode for the focused container
+    bindsym $mod+f fullscreen toggle
+    # change container layout (stacked, tabbed, toggle split)
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+    # toggle tiling / floating
+    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Shift+w sticky toggle
+    # change focus between tiling / floating windows
+    #bindsym $mod+alt+space focus mode_toggle
+    # resize window (you can also use the mouse for that)
+    mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        # Pressionar a tecla A ou tecla D modifica a largura
+        # Pressionar a tecla S ou a tecla W modifica altura
+        bindsym a        resize shrink width 20 px
+        bindsym s        resize grow height 20 px
+        bindsym w          resize shrink height 20 px
+        bindsym d      resize grow width 20 px
+        # ENTER ou ESC para finalizar as Modicicações
+        bindsym Left resize shrink width 20 px
+        bindsym Down resize grow height 20 px
+        bindsym Up resize shrink height 20 px
+        bindsym Right resize grow width 20 px
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+    }
+    bindsym $mod+r mode "resize"
+## }}
+
+## WorkGroup {{
+    set $ws1 1
+    set $ws2 2
+    set $ws3 3
+    set $ws4 4
+    set $ws5 5
+    set $ws6 6
+    set $ws7 7
+    set $ws8 8
+    set $ws9 9
+    set $ws0 10
+    # switch to workspace
+    bindsym $mod+1 workspace $ws1
+    bindsym $mod+2 workspace $ws2
+    bindsym $mod+3 workspace $ws3
+    bindsym $mod+4 workspace $ws4
+    bindsym $mod+5 workspace $ws5
+    bindsym $mod+6 workspace $ws6
+    bindsym $mod+7 workspace $ws7
+    bindsym $mod+8 workspace $ws8
+    bindsym $mod+9 workspace $ws9
+    bindsym $mod+0 workspace $ws0
+    # move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace $ws1
+    bindsym $mod+Shift+2 move container to workspace $ws2
+    bindsym $mod+Shift+3 move container to workspace $ws3
+    bindsym $mod+Shift+4 move container to workspace $ws4
+    bindsym $mod+Shift+5 move container to workspace $ws5
+    bindsym $mod+Shift+6 move container to workspace $ws6
+    bindsym $mod+Shift+7 move container to workspace $ws7
+    bindsym $mod+Shift+8 move container to workspace $ws8
+    bindsym $mod+Shift+9 move container to workspace $ws9
+    bindsym $mod+Shift+0 move container to workspace $ws0
+    #navigate workspaces next / previous
+    bindsym $mod+Ctrl+Right workspace next
+    bindsym $mod+Ctrl+Left workspace prev
+
+## }}
+
+## Multimedia {{
+    bindsym $mod+F5 exec xbacklight -dec 10
+    bindsym $mod+F6 exec xbacklight -inc 10
+    #Controlar brilho (Depende do pacote xbacklight)
+    bindsym XF86MonBrightnessUp exec xbacklight -inc 40
+    bindsym XF86MonBrightnessDown exec xbacklight -dec 40
+    #controlar volume (Depende do pacote alsa-utils)
+    bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+    bindsym XF86AudioLowerVolume  exec amixer set Master 5%-
+    bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+## }}
+
+## MEUS ATALHOS {{
+
+    bindsym $mod+t exec terminator &
+    bindsym Ctrl+Shift+Escape exec terminator -e bpytop &
+    bindsym $mod+a exec google-chrome-stable --app=https://calendar.google.com/calendar/r/week\?tab\=wc\&pli\=1 --class=Agenda
+    bindsym $mod+u exec google-chrome-stable --app=https://duo.google.com --class=Duo
+    bindsym $mod+F3 exec xfce4-appfinder
+    bindsym $mod+x exec "guake -e /bin/ranger --show"
+    bindsym $mod+n exec "nautilus"
+    bindsym $mod+Shift+x exec "thunar"
+    bindsym $mod+m exec "guake -e cmus --show" 
+    bindsym $mod+g exec goldendict &
+    bindsym $mod+c exec qalculate-gtk --class Nitrogen &
+    bindsym $mod+p exec gpick --class Nitrogen &
+    bindsym Shift+Print exec flameshot gui &
+    bindsym $mod+d exec dmenu_run &
+    bindsym F10 exec --no-startup-id "rofi -combi-modi window,drun,run,ssh -show combi -line-padding 4 -padding 50 -hide-scrollbar -show-icons" 
+    bindsym Mod1+F1 exec --no-startup-id "rofi -modi window,drun,run,ssh -show combi -line-padding 4 -columns 2 -padding 50 -hide-scrollbar -show-icons" 
+    bindsym $mod+$alt+space exec locate home media | rofi -threads 0 -width 100 -dmenu -i -p Localizar | xargs -r -0 xdg-open
+
+    #exec --no-startup-id ksuperkey -e 'Super_L=Alt_L|F1'
+    #exec --no-startup-id ksuperkey -e 'Super_R=Alt_L|F1'
+   
+## }}
+
+## Class {{
+    for_window [class="Agenda"] floating enable resize set 600 500
+    for_window [class="Xfce4-appfinder"] sticky enable floating enable resize set 600 500
+    for_window [class="Duo"] floating enable sticky enable resize set 300 400
+    for_window [class="Nitrogen"] floating enable sticky enable border normalv
+    for_window [class="MiniFloat"] floating enable
+    assign [class="Spotify"] 9
+    assign [class="Slack"] 10
+    for_window [instance="guake"] floating enable
+    for_window [class="Yad"] floating enable
+## }}
+#
+## I3Bar {{
+    # Start i3bar to display a workspace bar (plus the system information i3status
+    # finds out, if available)
+    bar {
+        # mode hide
+        mode dock
+        # # font pango: Terminus 12px
+        status_command i3blocks
+        # status_command ~/.config/myconfig/.config/i3/my_check.sh
+        # status_command i3status
+        #i3bar_command i3bar -t
+        position bottom
+        #position top
+        colors {
+            separator #FF4C3A
+            background #3E3E3E
+            statusline #CECECE
+            # focused_workspace #FE3B26 #FE3B26 #FFFFFF #FE3B26
+            # active_workspace  #FE3B26 #FE3B26 #FFFFFF #FE3B26
+            # inactive_workspace #93A1A1 #93A1A1 #ECECEC
+            urgent_workspace #DCA32F #DCA32F #FFFFFF
+        }
+    }
+## }}
+
+
+#
+## Auto run {{
+    #exec --no-startup-id setxkbmap -option caps:escape &
+    #exec setxkbmap -model abnt2 -layout br -variant abnt2 
+    exec nm-applet &
+    # exec volumeicon &
+    exec guake &
+    exec redshift &
+    exec udiskie -ans &
+    exec xfce4-power-manager &
+    #exec --no-startup-id xcompmgr -C & 
+    #exec --no-startup-id xset -dpms; xset s off &
+    # exec com.icanblink.blink &
+    
+    exec dbus-launch compton --config ~/.config/compton.conf &
+    exec dunst -config ~/.config/dunst/dunstrc &
+
+    exec /usr/bin/parcellite # /usr/bin/xfce4-clipman
+# }}
+
+
+bindsym XF86Display exec /home/myuser/.screenlayout/detect.sh
+
+
+#exec --no-startup-id /usr/lib/gsd-xsettings
+#exec_always --no-startup-id gnome-power-manager
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+#exec --no-startup-id dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+#exec --no-startup-id gnome-flashback

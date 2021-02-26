@@ -1,0 +1,61 @@
+command="/home/myuser/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME"
+separator_block_width=15
+markup=none
+
+[internet_checker]
+# interval=once
+interval=60
+color=#FF0000
+
+[bandwidth]
+interval=3
+
+[temperature]
+label=✱
+interval=10
+
+[cpu_usage]
+label=🚀
+interval=3
+# DECIMALS=1
+
+[memory]
+label=☈
+interval=3
+
+[disk]
+label=☰
+interval=120
+
+[iface]
+color=#00FF00
+interval=10
+
+[wifi]
+#INTERFACE=wlo1
+label=
+color=#8CAC00
+interval=30
+
+[monitor]
+full_text=DP
+
+[volume]
+label=♫
+# command=pavucontrol
+# while read button; do echo "Got click $button"; done
+interval=2
+
+[battery]
+interval=5
+color=red
+
+# # Date Time
+# [time]
+# command=date '+%d de %b (%H:%M)'
+# interval=5
+
+
+[calendar]
+interval=5
+label=

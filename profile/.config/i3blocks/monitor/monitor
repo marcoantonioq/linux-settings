@@ -1,0 +1,19 @@
+#!/bin/bash
+
+run1=""
+
+displays_on=$( xrandr -q | grep -v LVDS1 | grep ' connected' | awk '{ print$1 }' )
+displays_off=$( xrandr -q |  grep -v LVDS1 |grep 'disconnected' | awk '{ print$1 }' )
+
+for disp in  $displays_on; do
+    notify-send "$disp ligado "
+    i3-msg exec "xrandr --output $disp --auto --right-of LVDS1" &>/dev/null
+    run1="arandr"
+done
+
+for disp in  $displays_off; do
+    #notify-send "$disp desligado "
+    i3-msg exec "xrandr --output $disp --off" &>/dev/null
+done
+$run1 & &>/dev/null
+exit 0

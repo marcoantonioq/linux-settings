@@ -1,0 +1,3 @@
+
+
+hostname -i | awk '{ print "IP:" $1 }'

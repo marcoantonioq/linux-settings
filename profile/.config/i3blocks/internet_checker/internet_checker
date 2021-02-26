@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# while true; do
+
+    if ( ! ( ping -w 4 -c 2 -n g1.com.br >/dev/null 2>&1 ) ) ; then
+        echo -n "NET :("
+    else
+        if ( ! ( ping -w 5 -c 2 200.0.40.249 >/dev/null 2>&1 || ping -w 1 -c 1 200.0.40.250 >/dev/null 2>&1 ) ); then
+            echo -n " IFG :("
+            # notify-send " IFG "
+        fi
+    fi
+
+    echo ""
+
+# done

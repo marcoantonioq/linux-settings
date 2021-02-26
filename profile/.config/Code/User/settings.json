@@ -1,0 +1,50 @@
+{
+    "editor.minimap.enabled": false,
+    "files.associations": {
+        "config": "shellscript",
+        "*.gs": "javascript"
+    },
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "d"],
+            "after": ["d", "d"]
+        },
+        {
+            "before": ["<C-n>"],
+            "commands": [":nohl"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "window.zoomLevel": 0,
+    "cSpell.language": "en,pt,pt_BR",
+    "cSpell.languageSettings": [
+    
+    ],
+    "cSpell.enabled": true,
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.startupEditor": "welcomePage",
+    "window.menuBarVisibility": "toggle",
+    "workbench.activityBar.visible": true,
+    "python.languageServer": "Microsoft",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}

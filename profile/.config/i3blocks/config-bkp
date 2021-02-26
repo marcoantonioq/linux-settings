@@ -1,0 +1,77 @@
+SCRIPT_DIR="~/.config/i3blocks"
+command=$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+# [pomodoro]
+# interval=1
+
+[internet_checker]
+#interval=once
+interval=60
+color=#FF0000
+
+[bandwidth]
+interval=3
+#interval=persist
+
+[temperature]
+interval=10
+
+[cpu_usage]
+label=C 
+interval=3
+DECIMALS=1
+#min_width=CPU 100.00%
+#separator=false
+
+[memory]
+label=R 
+interval=3
+
+[disk]
+label= / 
+DIR=/
+interval=240
+
+[iface]
+#label=
+IFACE=enp0s25
+color=#00FF00
+interval=10
+
+[wifi]
+#INTERFACE=wlo1
+label=
+color=#8CAC00
+interval=30
+
+#[battery]
+#label=
+#interval=30
+#color=red
+
+[volume]
+#pavucontrol
+label=
+interval=5
+
+[monitor]
+full_text=
+#command=notify-send "Button $BLOCK_BUTTON ($BLOCK_X, $BLOCK_Y)"
+#interval=once
+
+# [Keep]
+# full_text=Keep
+# command=exec google-chrome-stablei --profile-directory=Default --app=https://keep.google.com/u/0/ --class=Agenda
+
+[battery2]
+markup=pango
+interval=30
+
+[calendar]
+interval=60
+LABEL= 
+DATEFMT=+%d %H:%M 
+HEIGHT=180
+WIDTH=220

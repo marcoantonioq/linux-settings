@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+exec "systemctl suspend";
+use strict;
+use warnings;
+use utf8;
+
+my $bat_number = $ENV{BAT_NUMBER} || 0;
+my $acpi;
+
+
+open (ACPI, "systemctl suspend") or die;
+$acpi = <ACPI>;
+close(ACPI);
+
+print $acpi;
+
+exit(0);
