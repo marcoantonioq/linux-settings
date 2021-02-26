@@ -5,7 +5,8 @@ Debian + I3wm
 # Installation
 
 ```bash
-wget https://raw.githubusercontent.com/marcoantonioq/linux-settings/master/
+git clone https://github.com/marcoantonioq/linux-settings.git 
+cd linux-settings
 bash install.sh
 ```
 
