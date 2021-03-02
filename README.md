@@ -2,6 +2,12 @@
 
 Debian + I3wm
 
+# Dependencias
+
+```bash
+$ sudo apt install rofi rsync git guake terminator ranger i3blocks yad pavucontrol
+```
+
 # Installation
 
 ```bash
