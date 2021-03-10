@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="smb://1934155@10.11.0.12/arquivos/" added="2020-10-19T12:42:37Z" modified="2020-10-30T17:38:52Z" visited="2020-10-30T17:38:52Z">
+    <title>arquivos em 10.11.0.12</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;nautilus %u&apos;" modified="2020-10-30T17:38:52Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://192.168.0.3/" added="2020-12-18T20:55:14Z" modified="2021-01-29T22:10:34Z" visited="2021-01-29T22:10:34Z">
+    <title>Compartilhamentos Windows em 192.168.0.3</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;nautilus %u&apos;" modified="2021-01-29T22:10:34Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://localhost/" added="2021-01-09T00:59:38Z" modified="2021-01-20T17:18:07Z" visited="2021-01-20T17:18:07Z">
+    <title>Compartilhamentos Windows em localhost</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;nautilus %u&apos;" modified="2021-01-20T17:18:07Z" count="22"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="smb://10.11.0.12/arquivos/" added="2021-01-26T17:10:49Z" modified="2021-02-08T18:36:47Z" visited="2021-02-08T18:36:47Z">
+    <title>arquivos em 10.11.0.12</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;nautilus %u&apos;" modified="2021-02-08T18:36:47Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

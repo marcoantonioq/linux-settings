@@ -17,6 +17,11 @@ restory(){
     # Guake
     dconf reset -f /apps/guake/
     dconf load /apps/guake/ < ./profile/.config/backup_of_my_guake_settings
+
+    # Outhers
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    chsh -s $(which zsh)
 }
 
 backup(){

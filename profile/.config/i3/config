@@ -258,7 +258,7 @@ set $alt Mod1
     #exec --no-startup-id xset -dpms; xset s off &
     # exec com.icanblink.blink &
     
-    exec dbus-launch compton --config ~/.config/compton.conf &
+    exec compton -b
     exec dunst -config ~/.config/dunst/dunstrc &
 
     exec /usr/bin/parcellite # /usr/bin/xfce4-clipman
