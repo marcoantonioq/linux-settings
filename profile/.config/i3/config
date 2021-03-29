@@ -254,6 +254,7 @@ set $alt Mod1
     exec redshift &
     exec udiskie -ans &
     exec xfce4-power-manager &
+    exec magasync &
     #exec --no-startup-id xcompmgr -C & 
     #exec --no-startup-id xset -dpms; xset s off &
     # exec com.icanblink.blink &

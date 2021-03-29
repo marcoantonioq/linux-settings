@@ -1,0 +1,40 @@
+{
+    "schema_version": 2,
+    "timestamp": 1558724157,
+    "workspace": {
+        "0": [
+            [
+                {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/myuser/Downloads/Videos"
+                        }
+                    ],
+                    "label": "myuser@myhost: ~/Downloads/Videos",
+                    "custom_label_set": false
+                },
+                {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/myuser/Documentos/Projetos/Python/Leitor de Portarias/pytesseract"
+                        }
+                    ],
+                    "label": "~/Documentos/Projetos/Python/Leitor de Portarias/pytesseract/main.py",
+                    "custom_label_set": false
+                },
+                {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/myuser/Documentos/Projetos/Python/Leitor de Portarias/pytesseract"
+                        }
+                    ],
+                    "label": "root@myhost: /home/myuser/Documentos/Projetos/Python/Leitor de Portarias/pytesseract",
+                    "custom_label_set": false
+                }
+            ]
+        ]
+    }
+}
