@@ -18,6 +18,9 @@ restory(){
     dconf reset -f /apps/guake/
     dconf load /apps/guake/ < ./profile/.config/backup_of_my_guake_settings
 
+    # VsCode
+    cat ./profile/.config/vscode.extensions | xargs -L 1 echo code --install-extension
+
     # Outhers
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -32,6 +35,7 @@ restory(){
 
 backup(){
     dconf dump /apps/guake/ > ./profile/.config/backup_of_my_guake_settings
+    code --list-extensions > ./profile/.config/vscode.extensions
 }
 
 case $1 in
@@ -39,6 +43,10 @@ case $1 in
         backup 
         ;;
 
-    *) restory
+    "restory") 
+        restory
+        ;;
+    *)
+        echo "Informe ./install (backup|restory) "
         ;;
 esac
